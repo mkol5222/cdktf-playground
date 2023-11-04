@@ -1,0 +1,15 @@
+{
+  "language": "typescript",
+  "app": "npx ts-node main.ts",
+  "projectId": "327cfb5d-4ffe-4bef-a697-7431b6f8c40f",
+  "sendCrashReports": "true",
+  "terraformProviders": [
+    "azurerm@~> 3.0",
+    "CheckPointSW/checkpoint@~> 2.6.0"
+  ],
+  "terraformModules": [],
+  "context": {},
+  "watchPattern": [
+    "./**/*.ts"
+  ]
+}
