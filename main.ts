@@ -10,7 +10,11 @@ import { DataTerraformRemoteStateAzurerm } from "cdktf";
 
 import { DataCheckpointManagementDataHost } from "./.gen/providers/checkpoint/data-checkpoint-management-data-host";
 
+require('dotenv').config();
 
+const CPAPIKEY = process.env.CPAPIKEY || 'use-your-own-key';
+const CPSERVER = process.env.CPSERVER || 'use-your-own-key';
+const CPTENANT = process.env.CPTENANT || 'use-your-own-key';
 
 class MyStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
@@ -23,10 +27,10 @@ class MyStack extends TerraformStack {
 
     new CheckpointProvider(this, "checkpoint", {
       //       
-      server: "mtest2-za8upq50.maas.checkpoint.com",
-      apiKey: "zW1HOqRZoNel6VOibJS+tw==",
+      server: CPSERVER,
+      apiKey: CPAPIKEY,
       context: "web_api",
-      cloudMgmtId: "ccae851f-cafa-4fcf-a0da-c50788f1dde3"
+      cloudMgmtId: CPTENANT
     });
 
     const hostPankrac = new ManagementHost(this, "pankrac", {
